@@ -1,0 +1,115 @@
+.features-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.courses-grid {
+    position: relative;
+    z-index: 2;
+}
+
+.course-card {
+    padding: 2.5rem 2rem;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.course-card:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px -10px var(--course-color, rgba(79, 70, 229, 0.4));
+}
+
+.course-icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--course-color, var(--primary));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.course-card:hover .course-icon-container {
+    background: var(--course-color, var(--primary));
+    color: white;
+    transform: rotate(10deg);
+}
+
+.course-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.course-desc {
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.course-link {
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.course-link .arrow {
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-link {
+    color: var(--course-color, #818cf8);
+}
+
+.course-card:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Background gradient blobs */
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    opacity: 0.5;
+    animation: blob var(--transition-slow) infinite alternate;
+}
+
+.blob-1 {
+    top: 10%;
+    left: -200px;
+    background: rgba(79, 70, 229, 0.15);
+    /* Primary */
+}
+
+.blob-2 {
+    bottom: 10%;
+    right: -200px;
+    background: rgba(16, 185, 129, 0.1);
+    /* Secondary */
+    animation-delay: 2s;
+}
+
+@media (max-width: 768px) {
+    .blob {
+        display: none;
+    }
+}
